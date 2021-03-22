@@ -1,8 +1,7 @@
 import 'dart:math'; //inport사용
+import 'dart:io';
 
 void main() {
-
-
   int a = 3;
   int b = 5;
   int r = a * b;
@@ -15,11 +14,12 @@ void main() {
   // 출력 예)
   // 가로 3, 세로 5의 직사각형의 면적은 15
 
- print(pi);
+  print(pi);
 
   cantrolFlowExam();
   dice();
- dice1();
+  dice1();
+  finalExam();
 }
 // true = 진위 참 거짓 bool
 // 3.14 = 실수 double
@@ -28,15 +28,15 @@ void main() {
 //string name = '/"항구 를 공격! 적에게 15포인트의 데미지를 주었다"/'
 
 void example() {
-   print('내 이름은 한석봉입니다');
-   print('내 이름은 한석봉입니다');
-   print('내 이름은 한석봉입니다');
-   print('내 이름은 한석봉입니다');
-   print('내 이름은 한석봉입니다');
-   print('내 이름은 한석봉입니다');
+  print('내 이름은 한석봉입니다');
+  print('내 이름은 한석봉입니다');
+  print('내 이름은 한석봉입니다');
+  print('내 이름은 한석봉입니다');
+  print('내 이름은 한석봉입니다');
+  print('내 이름은 한석봉입니다');
 }
-void cantrolFlowExam() {
 
+void cantrolFlowExam() {
   var names = ['한석봉', '한석봉', '한석봉'];
 
   for (var name in names) {
@@ -66,14 +66,35 @@ void cantrolFlowExam() {
 
 void dice() {
   var rng = new Random();
-    print(rng.nextInt(6) + 1);  // 1~6
-  }
-
+  print(rng.nextInt(6) + 1); // 1~6
+}
 
 void dice1() {
   random(min, max) {
     var random = new Random();
     return min + random.nextInt(max - min);
   }
+
   print(random(1, 6));
+}
+
+void finalExam() {
+  print('점을 보세요');
+  print('이름을 입력해 주세요');
+  stdout.write("Enter your name : ");
+  String name = stdin.readLineSync();
+  stdout.write(name);
+
+  print('나이를 입력해주세요');
+  stdout.write("Enter your age : ");
+  String ageString = stdin.readLineSync();
+  stdout.write(ageString);
+
+  int age = int.parse(ageString);
+  var rng = new Random();
+  int fortune = rng.nextInt(4) + 1;
+  print('점꾀가 나왔습니다!');
+  print('${age}살의 ${name}씨, ')
+
+
 }
