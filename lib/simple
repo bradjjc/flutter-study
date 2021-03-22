@@ -1,4 +1,8 @@
+import 'dart:math'; //inport사용
+
 void main() {
+
+
   int a = 3;
   int b = 5;
   int r = a * b;
@@ -16,4 +20,5 @@ void main() {
     // 314159265853979 = 숫자 int
     // “항구를 공격! 적에게 15포인트의 데미지를 주었다" = print
 
+ print(pi);
 }
