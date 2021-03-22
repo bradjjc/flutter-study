@@ -72,8 +72,8 @@ void dice() {
 
 void dice1() {
   random(min, max) {
-    var rn = new Random();
-    return min + rn.nextInt(max - min);
+    var random = new Random();
+    return min + random.nextInt(max - min);
   }
   print(random(1, 6));
 }
