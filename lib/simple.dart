@@ -18,6 +18,8 @@ void main() {
  print(pi);
 
   cantrolFlowExam();
+  dice();
+ dice1();
 }
 // true = 진위 참 거짓 bool
 // 3.14 = 실수 double
@@ -60,4 +62,18 @@ void cantrolFlowExam() {
   } else {
     print('3보다 작다');
   }
+}
+
+void dice() {
+  var rng = new Random();
+    print(rng.nextInt(6) + 1);  // 1~6
+  }
+
+
+void dice1() {
+  random(min, max) {
+    var rn = new Random();
+    return min + rn.nextInt(max - min);
+  }
+  print(random(1, 6));
 }
