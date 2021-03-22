@@ -44,7 +44,7 @@ void main() {
   // null
 
 
-  double tax = 1.1; //세금
+  final double tax = 1.1; // 상수 세금
   int fax = 5; //5.5
   print('5만원짜리를 4만원으로 할인합니다');
   fax = 4;
