@@ -81,12 +81,12 @@ void dice1() {
 void finalExam() {
   print('점을 보세요');
   print('이름을 입력해 주세요');
-  stdout.write("Enter your name : ");
+  stdout.write('Enter your name : ');
   String name = stdin.readLineSync();
   stdout.write(name);
 
   print('나이를 입력해주세요');
-  stdout.write("Enter your age : ");
+  stdout.write('Enter your age : ');
   String ageString = stdin.readLineSync();
   stdout.write(ageString);
 
