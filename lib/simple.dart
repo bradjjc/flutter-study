@@ -20,6 +20,7 @@ void main() {
   dice();
   dice1();
   finalExam();
+  function();
 }
 // true = 진위 참 거짓 bool
 // 3.14 = 실수 double
@@ -63,10 +64,12 @@ void cantrolFlowExam() {
     print('3보다 작다');
   }
 }
-
-void dice() {
-  var rng = new Random();
-  print(rng.nextInt(6) + 1); // 1~6
+void function(){
+  print('주사위 : ${dice()}');
+}
+int dice() {
+  Random random = Random();
+  return random.nextInt(6) + 1; // 1~6
 }
 
 void dice1() {

@@ -131,7 +131,6 @@ void exam4() {
   stdout.write('Enter the number: ');
   String selected = stdin.readLineSync();
   int selected1 = int.parse(selected);
-  stdout.write(selected);
 
   if (selected1 == 1) {
     print('검색합니다');
