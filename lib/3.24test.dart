@@ -9,10 +9,12 @@ void main() {
   String number = stdin.readLineSync();
 
   int input = int.parse(number);
-  for (int i = 0; i < check.length; i++) {
+  // i를 0 으로 넣으면 3일때 정답,실패 두번 프린트됨.
+  //for (int i = 1; i < check.length; i++) {
+  for (int i = 0; i < 10; i++) {
     if (input == check[i]) {
       print('정답!');
-    }  else  {
+    }  else if (input != check[i]) {
       print('실패!');
       break;
     }
