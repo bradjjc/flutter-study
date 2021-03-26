@@ -4,6 +4,10 @@ import 'equipment/sword.dart';
 
 void main(){
   Hero hero = Hero('홍길동', 50);  // 생성자
+  Hero hero2 = Hero('베트맨', 50);
+
+  // 공용자원은 쓸때 클래스 대문자
+  Hero.money = Hero.money -10;
 
   // hero의 hp프로퍼티
   print('피 ${hero.hp}');

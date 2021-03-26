@@ -1,10 +1,13 @@
 
 
 import 'dart:math';
+// 프로그램 전채공용
+int money = 100;
 
 import 'package:flutter_app/equipment/sword.dart'; //inport사용
 
 class Hero {
+  // 공유자원
   static int money = 100;
 
   // field, global veriable, 전역변수

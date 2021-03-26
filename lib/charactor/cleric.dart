@@ -1,11 +1,9 @@
-
 import 'dart:math'; //inport사용
-
 
 class Cleric {
   String name;
-  int hp = 50;
-  int mp = 10;
+  int hp;
+  int mp;
   final int maxHp = 50;
   final int maxMp = 10;
 
