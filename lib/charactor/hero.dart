@@ -1,10 +1,12 @@
 
 
 import 'dart:math';
+
+import 'package:flutter_app/equipment/sword.dart';
 // 프로그램 전채공용
 int money = 100;
 
-import 'package:flutter_app/equipment/sword.dart'; //inport사용
+
 
 class Hero {
   // 공유자원

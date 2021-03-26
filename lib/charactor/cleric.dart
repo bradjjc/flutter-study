@@ -4,8 +4,10 @@ class Cleric {
   String name;
   int hp;
   int mp;
-  final int maxHp = 50;
-  final int maxMp = 10;
+  static final int maxHp = 50;
+  static final int maxMp = 10;
+
+  Cleric(this.name, this.hp, this.mp);
 
   void selfAid() {
     mp = mp - 5;

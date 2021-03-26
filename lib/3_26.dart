@@ -24,8 +24,10 @@ void main(){
  // 더이상 이름, hp 설정을 할수없다.
   // 버그를 줄이기이해 사람이실수하는것을 줄이기위해서.
 
+  Cleric cleric = Cleric('아서스', 40, 5); //기본생성자
+  print('${cleric.name} 은 ${cleric.hp}hp ${cleric.mp}mp 입니다');
 
-  Cleric cleric = Cleric(); //기본생성자
+
 
 
 }
