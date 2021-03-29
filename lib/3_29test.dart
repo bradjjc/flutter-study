@@ -12,6 +12,9 @@ void main() {
   print(word.isConsonant(2));
   print(word.isConsonant(3));
   print(word.isConsonant(4));
+
+
+  Word dish = Word('dish');
 }
 
 // class Word {
@@ -59,13 +62,30 @@ void main() {
 // i번째 글자가 자음이면 true
 class Word {
   String letters;
+
   Word(this.letters); // this 기본생성자
   // i번째 글자가 모음이면 true  // a, i, u, e, o
   bool isVowel(int i) =>
       'aiueo'.contains(letters.substring(i, i + 1).toLowerCase());
 
+  // 자
   bool isConsonant(int i) => !isVowel(i);
-}
+
+  // 복수형으로 변환하는기능
+  String toPlural() {
+    if (letters.endsWith('s') || letters.endsWith('x') ||
+        letters.endsWith('ch') || letters.endsWith('sh') ||
+        letters.endsWith('o')) {
+      return '${letters}es';
+    } else if (letters.endsWith('f') || letters.endsWith('fe')) {
+      return letters.replaceAll('f', 'ves').replaceAll('fe', 'ves');
+    } else if (isConsonant(letters.length - 2) && letters.endsWith('y')) {
+      return letters.replaceAll('y', 'ies').replaceAll(
+          '${isConsonant}y', 'ies');
+    } else {
+      return '${letters}s';
+    }
+  }
 
 // bool isConsonant1(int i) => !'aeiou'.contains(letters.substring(i-1,i).toLowerCase());
 // }
@@ -109,3 +129,71 @@ class Word {
 //     return false;
 //   }
 // }
+
+
+
+
+
+//   void main() {
+//     Word dish = Word('dish');
+//     print(dish.toPlural()); // dishes
+//
+//     Word cherry = Word('cherry');
+//     print(cherry.toPlural()); // cherries
+//
+//     Word clock = Word('clock');
+//     print(clock.toPlural()); // clocks
+//
+//     Word tax = Word('tax');
+//     print(tax.toPlural()); // taxes
+//
+//     Word bench = Word('bench');
+//     print(bench.toPlural()); // benches
+//
+//     Word tomato = Word('tomato');
+//     print(tomato.toPlural()); // tomatoes
+//
+//     Word baby = Word('baby');
+//     print(baby.toPlural()); // babies
+//
+//     Word leaf = Word('leaf');
+//     print(leaf.toPlural()); // leaves
+//
+//     Word live = Word('live');
+//     print(live.toPlural()); // lives
+//   }
+//
+//   class Word {
+//   String letters;
+//
+//   Word(this.letters);
+//
+//   // i번째 글자가 모음이면 true  // a, i, u, e, o
+//   bool isVowel(int i) =>
+//   'aiueo'.contains(letters.substring(i, i + 1).toLowerCase());
+//
+//   // 자음
+//   bool isConsonant(int i) => !isVowel(i);
+//
+//   // 복수형으로 변환
+//   String toPlural() {
+//   // s, x, ch, sh : -es
+//   if (letters.endsWith('s') ||
+//   letters.endsWith('x') ||
+//   letters.endsWith('ch') ||
+//   letters.endsWith('sh') ||
+//   letters.endsWith('o')) {
+//   return '${letters}es';
+//   } else if (letters.endsWith('f')) {
+//   // f -> ves
+//   return '${letters.substring(0, letters.length - 1)}ves';
+//   } else if (letters.endsWith('fe')) {
+//   // fe -> ves
+//   return '${letters.substring(0, letters.length - 2)}ves';
+//   } else if (isConsonant(letters.length - 2) && letters.endsWith('y')) {
+//   // 자음 + y : y -> ies
+//   return '${letters.substring(0, letters.length - 1)}ies';
+//   }
+//
+//   return '${letters}s';
+//   }
