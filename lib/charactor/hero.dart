@@ -2,7 +2,10 @@
 
 import 'dart:math';
 
-import 'package:flutter_app/equipment/sword.dart';
+
+import '../equipment/sword.dart';
+
+
 // 프로그램 전채공용
 int money = 100;
 
