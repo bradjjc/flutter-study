@@ -72,6 +72,7 @@ class Word {
   bool isConsonant(int i) => !isVowel(i);
 
   // 복수형으로 변환하는기능
+
   String toPlural() {
     if (letters.endsWith('s') || letters.endsWith('x') ||
         letters.endsWith('ch') || letters.endsWith('sh') ||
@@ -85,7 +86,10 @@ class Word {
     } else {
       return '${letters}s';
     }
+
   }
+
+}
 
 // bool isConsonant1(int i) => !'aeiou'.contains(letters.substring(i-1,i).toLowerCase());
 // }
@@ -197,3 +201,38 @@ class Word {
 //
 //   return '${letters}s';
 //   }
+
+
+  // List<String> es = ['o', 's', 'x', 'ch', 'sh'];
+  // for (int i = 0; i < es.length; i++) {
+  // bool isLast1 = es[i] == letters.substring(letters.length - 1, letters.length);
+  // bool isLast2 = es.elementAt(i) == letters.substring(letters.length - 2, letters.length);
+  // if (isLast1 || isLast2) {
+  // return letters + 'es';
+  // }
+
+
+
+
+// String toPlural() {
+//   String result = '${letters}s';
+//   // s, x, ch, sh : -es
+//   if (letters.endsWith('s') ||
+//       letters.endsWith('x') ||
+//       letters.endsWith('ch') ||
+//       letters.endsWith('sh') ||
+//       letters.endsWith('o')) {
+//     result = '${letters}es';
+//   } else if (letters.endsWith('f')) {
+//     // f -> ves
+//     result = '${letters.substring(0, letters.length - 1)}ves';
+//   } else if (letters.endsWith('fe')) {
+//     // fe -> ves
+//     result = '${letters.substring(0, letters.length - 2)}ves';
+//   } else if (isConsonant(letters.length - 2) && letters.endsWith('y')) {
+//     // 자음 + y : y -> ies
+//     result = '${letters.substring(0, letters.length - 1)}ies';
+//   }
+//   return result;
+// }
+// 항상 마지막에 리턴하는 습관 -> 좋은 습관
