@@ -11,3 +11,18 @@
 //
 // // 3335
 // // No
+void main() {
+  Exam exam = Exam();
+  print(exam.solution('4444'));
+  print(exam.solution('3335'));
+}
+class Exam {
+  int solution(String s) {
+    int result = 0;
+    for (int i = 0; i < s.length; i++) {
+      if (s.substring(i, i + 1) == s.substring(i)) {
+        return
+      } else {
+    return "No";
+  }
+}
