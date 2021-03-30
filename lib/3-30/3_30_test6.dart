@@ -27,9 +27,11 @@ void main() {
 
 class Exam {
   String solution(int a, int b) {
-    for (int i = a; i < 9; i + b) {
-      a += b;
+    String result = '';
+    for (int i = 0; i < 10; i ++) {
+      int ex = b + a * i;
+          result += '$ex ';
     }
-    return ('${a}');
+    return result;
   }
 }
