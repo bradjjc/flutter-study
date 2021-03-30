@@ -28,3 +28,18 @@ class Exam {
     }
   }
 }
+// quiz3
+// import 'dart:math';
+// void main() {
+//   Exam exam = Exam();
+//   print(exam.solution(30, 30));
+// }
+// class Exam {
+//   String solution(int a, int b) {
+//     String result = 'eq';
+//     if (a != b) {
+//       result = max(a, b).toString();
+//     }
+//     return result;
+//   }
+// }

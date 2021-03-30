@@ -4,8 +4,8 @@ import 'dart:io';
 void main() {
   List<int> check = [3, 4, 9];
 
-  print('1자리의 숫자를 입력 해 주세요');
-  stdout.write('Enter the number: ');
+  print('거를 입력 해 주세요');
+  stdout.write('Enter the distance: ');
   String number = stdin.readLineSync();
 
   int input = int.parse(number);
