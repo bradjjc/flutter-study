@@ -6,3 +6,28 @@
 //
 // // 1
 // // 6
+void main() {
+  Exam exam = Exam();
+  print(exam.solution(3));
+  print(exam.solution(1));
+}
+class Exam {
+  int solution(int i) {
+    int result = 0;
+      if (i == 1){
+        return 6;
+      }
+      else if (i == 2){
+        return 5;
+      }else if (i == 3){
+        return 4;
+      }else if (i == 6){
+        return 1;
+      }else if (i == 5){
+        return 2;
+      }else if (i == 4){
+        return 3;
+      }
+
+  }
+}
