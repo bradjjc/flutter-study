@@ -93,6 +93,10 @@ void main () {
 //     for (int i = 0; i < word.length; i++) {
 //       String ch = word[i]; // 원래의 i번째 한글자
 //       String converted = rule[ch]; // 변경된 한글자
+
+//      result += result[ch] ?? ch;     null 이면 ch
+
+
 //       if (converted == null) {
 //         // 변경했더니 null이면
 //         result = result + ch; // 원래 한글자를 붙이고
@@ -104,3 +108,130 @@ void main () {
 //     return result;
 //   }
 // }
+
+// import 'dart:io';
+// void main() {
+//   String input = stdin.readLineSync();  // PAIZA
+//   Leet leet = Leet(input);
+//   print(leet.toLeet()); // P4IZ4
+// }
+// // Leet 클래스
+// class Leet {
+//   // Map : 자료를 저장하는 방법 중 하나
+//   var rule = {
+//     'A': '4',
+//     'E': '3',
+//     'G': '6',
+//     'I': '1',
+//     'O': '0',
+//     'S': '5',
+//     'Z': '2',
+//   };
+//   // Leet 클래스를 생성할 때 입력받을 문자열
+//   String word;
+//   // 생성자
+//   Leet(this.word);
+//   // 규칙을 적용한 문자열을 반환하는 메서드
+//   String toLeet() {
+//     // 결과를 저장할 변수
+//     String result = '';
+//     // word의 문자열의 수 만큼 반복
+//     for (int i = 0; i < word.length; i++) {
+//       String ch = word[i]; // 원래의 i번째 한글자
+//       result += rule[ch] ?? ch;
+//     }
+//     // 결과를 리턴
+//     return result;
+//   }
+// }
+// 별
+// import 'dart:io';
+// void main() {
+//   String input = stdin.readLineSync();  // PAIZA
+//   Leet leet = Leet(input);
+//   print(leet.toLeet()); // P4IZ4
+// }
+// // Leet 클래스
+// class Leet {
+//   // 변수의 이름은 명사로 한다. 메서드의 이름은 동사로 시작한다
+//   List<String> original = ['A', 'E', 'G', 'I', 'O', 'S', 'Z'];
+//   List<String> change = ['4', '3', '6', '1', '0', '5', '2'];
+//   // Leet 클래스를 생성할 때 입력받을 문자열
+//   String word;
+//   // 생성자
+//   Leet(this.word);
+//   // 규칙을 적용한 문자열을 반환하는 메서드
+//   String toLeet() {
+//     // 결과를 저장할 변수
+//     String result = '';
+//     // word의 문자열의 수 만큼 반복
+//     for (int i = 0; i < word.length; i++) {
+//       String ch = word[i]; // 원래의 i번째 한글자
+//       String converted = ch;
+//       for (int j = 0; j < original.length; j++) {
+//         if (ch == original[j]) {
+//           converted = change[j];
+//           break;
+//         }
+//       }
+//       result += converted;
+//     }
+//     // 결과를 리턴
+//     return result;
+//   }
+// }
+
+//함수형프로그래밍
+
+// void main() {
+//   // for (int dan = 2; dan <= 9; dan++) {
+//   //   for (int j = 1; j <= 9; j++) {
+//   //     print('$dan * $j = ${dan * j}');
+//   //   }
+//   // }
+//   // 1 ~ 5 의 합을 구하자
+//   int result = 0;
+//   for (int i = 1; i <= 5; i++) {
+//     result += i;
+//   }
+//   // print(result);
+//   // print([1, 2, 3, 4, 5].reduce((value, element) => value + element));
+//   var list = [1, 2, 3, 4, 5];
+//   // for (int i = 0; i < list.length; i++) {
+//   //   print('${i + 1}일');
+//   // }
+//   // ['1일', 2, 3, 4, 5]
+//   list.map((e) => '$e일').forEach((e) => print(e));
+//   list.map((e) => '$e일').forEach(print);
+// }
+// oid main() {
+//   // for (int dan = 2; dan <= 9; dan++) {
+//   //   for (int j = 1; j <= 9; j++) {
+//   //     print('$dan * $j = ${dan * j}');
+//   //   }
+//   // }
+//   // 1 ~ 5 의 합을 구하자
+//   int result = 0;
+//   for (int i = 1; i <= 5; i++) {
+//     result += i;
+//   }
+//   // print(result);
+//   // print([1, 2, 3, 4, 5].reduce((value, element) => value + element));
+//   var list = [1, 2, 3, 4, 5];
+//   // for (int i = 0; i < list.length; i++) {
+//   //   if (list[i] % 2 == 0) {
+//   //     print('${i + 1}일');
+//   //   }
+//   // }
+//   // ['1일', 2, 3, 4, 5]
+//   // list.map((e) => '$e일').forEach((e) => print(e));
+//   list.map((e) {
+//     if (e % 2 == 0) {
+//       return '$e일';
+//     } else {
+//       return e;
+//     }
+//   }).forEach(print);
+// }
+// 팀원에게 알리려면 @을 입력합니다.사용해 보기
+//
