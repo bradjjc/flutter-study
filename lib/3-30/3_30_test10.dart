@@ -18,7 +18,6 @@ void main() {
 }
 
 
-
 class Exam {
   String solution(int m, int n) {
     int a = m ~/ n;

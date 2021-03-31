@@ -5,7 +5,6 @@
 // "위치 (x, y)가 공사 현장에서 R 미터 이상 떨어져있다"는
 // (x -a)2 + (y - b)b >= R2
 
-
 // 정수 a,b,R
 // a,b 는 공사현장 좌표 x,y
 // R 공사현장 소음크기
@@ -39,33 +38,80 @@
 // noisy
 // noisy
 
+import 'dart:io';
 
 void main() {
-  Exam exam = Exam();
-  exam.strac(20, 10, 10);
-  // exam.tree(3);
-  print(exam.solution(25, 10));
-  print(exam.solution(20, 15));
-  print(exam.solution(70, 70));
+  List<String> inputLine = stdin.readLineSync().split(' ');
+  int a = int.parse(inputLine[0]);
+  int b = int.parse(inputLine[1]);
+  int R = int.parse(inputLine[2]);
+  int N = int.parse(stdin.readLineSync());
+  // 공원 생성
+  Park park = Park(
+      // 공사장을 공원에 셋팅
+      Gongsajang(a, b, R)
 
-  exam.strac2(50, 50, 100);
-  // exam.tree2(4);
-  print(exam.solution2(0, 0));
-  print(exam.solution2(0, 100));
-  print(exam.solution2(100, 0));
-  print(exam.solution2(100, 100));
+  );
+
+  for (int i = 0; i < N; i++) {
+    List<String> inputLine = stdin.readLineSync().split(' ');
+    int x = int.parse(inputLine[0]);
+    int y = int.parse(inputLine[1]);
+    // 나무를 생성
+
+    Tree tree = Tree(x, y);
+    park.trees.add(tree);
+  }
+// 시끄러운지 판단해서 출력
+  for (int i = 0; i < N; i++) {
+    if (park.gongsajang.isNoisy(park.trees[i]) == true) {
+      print('silent');
+    } else
+      print('noisy');
+  }
+
 }
 
-class Exam {
-  String strac(int a, int b, int R) {
-    // tree(int N);
-    String solution(int x, int y) {
-      if ((2 * (x - a)) + (b * (y - b)) >= R * 2) {
-        return 'noisy';
-      } else {
-        return 'silent';
-      }
-    }
+class Tree {
+  int x;
+  int y;
 
+  Tree(this.x, this.y);
+}
+
+class Gongsajang {
+  int a;
+  int b;
+  int R;
+
+
+  Gongsajang(this.a, this.b, this.R);
+
+  bool isNoisy(Tree tree) {
+    if (((tree.x - a) * 2) + ((tree.y - b) * 2) > (R * 2)) {
+      return true;
+    } else
+      return false;
   }
 }
+
+class Park {
+  Gongsajang gongsajang;
+  List<Tree> trees = [];
+
+  Park(this.gongsajang);
+}
+
+// class Exam {
+//   String strac(int a, int b, int R) {
+//     // tree(int N);
+//     String solution(int x, int y) {
+//       if ((2 * (x - a)) + (b * (y - b)) >= R * 2) {
+//         return 'noisy';
+//       } else {
+//         return 'silent';
+//       }
+//     }
+//
+//   }
+// }
