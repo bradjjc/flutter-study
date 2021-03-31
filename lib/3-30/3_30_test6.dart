@@ -29,7 +29,7 @@ class Exam {
   String solution(int a, int b) {
     String result = '';
     for (int i = 0; i < 10; i ++) {
-      int ex = b + a * i;
+      int ex = a + b * i;
           result += '$ex ';
     }
     return result;
