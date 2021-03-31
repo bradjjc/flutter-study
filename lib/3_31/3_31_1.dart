@@ -39,6 +39,7 @@
 // noisy
 
 import 'dart:io';
+import 'dart:math';
 
 void main() {
   List<String> inputLine = stdin.readLineSync().split(' ');
@@ -65,9 +66,9 @@ void main() {
 // 시끄러운지 판단해서 출력
   for (int i = 0; i < N; i++) {
     if (park.gongsajang.isNoisy(park.trees[i]) == true) {
-      print('silent');
-    } else
       print('noisy');
+    } else
+      print('silent');
   }
 
 }
@@ -88,10 +89,10 @@ class Gongsajang {
   Gongsajang(this.a, this.b, this.R);
 
   bool isNoisy(Tree tree) {
-    if (((tree.x - a) * 2) + ((tree.y - b) * 2) > (R * 2)) {
-      return true;
-    } else
+    if (((tree.x - a) * (tree.x - a)) + ((tree.y - b) * (tree.y - b)) >= pow(R, 2)) {
       return false;
+    } else
+      return true;
   }
 }
 
