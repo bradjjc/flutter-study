@@ -103,16 +103,162 @@ class Park {
   Park(this.gongsajang);
 }
 
+
+//quiz1-way1
 // class Exam {
-//   String strac(int a, int b, int R) {
-//     // tree(int N);
-//     String solution(int x, int y) {
-//       if ((2 * (x - a)) + (b * (y - b)) >= R * 2) {
-//         return 'noisy';
+//   String solution(List<int> list1, List<int> list2, List<int> list3) {
+//     String result = '';
+//     for (int i = 0; i < list2[0] + 2; i += 2) {
+//       if (pow(list3[i] - list1[0], 2) + pow(list3[i + 1] - list1[1], 2) >=
+//           pow(list1[2], 2)) {
+//         // result =  result+'\n'+'silent';
+//         result = result + 'silent' + '\n';
 //       } else {
-//         return 'silent';
+//         // result = result+'\n'+'noisy' ;
+//         result = result + 'noisy' + '\n';
 //       }
 //     }
-//
+//     return result;
 //   }
 // }
+// //quiz1-way2
+// void main() {
+//   List<String> position1 = stdin.readLineSync().split(' ');
+//   List<String> position2 = stdin.readLineSync().split(' ');
+//   List<String> position3 = [];
+//   List<String> list1 = [];
+//
+//   for (int i = 0; i < int.parse(position2[0]); i++) {
+//     list1 = stdin.readLineSync().split(' ');
+//     position3.add(list1[0]);
+//     position3.add(list1[1]);
+//   }
+//   Exam exam = Exam();
+//   print(exam.isNoisy(position1, position2, position3));
+// }
+//
+// class Exam {
+//   String isNoisy(List<String> list1, List<String> list2, List<String> list3) {
+//     String result = '';
+//     for (int i = 0; i < int.parse(list2[0]) + 2; i += 2) {
+//       if (pow(int.parse(list3[i]) - int.parse(list1[0]), 2) +
+//               pow(int.parse(list3[i + 1]) - int.parse(list1[1]), 2) >=
+//           pow(int.parse(list1[2]), 2)) {
+//         // result =  result+'\n'+'silent';
+//         result = result + 'silent' + '\n';
+//       } else {
+//         // result = result+'\n'+'noisy' ;
+//         result = result + 'noisy' + '\n';
+//       }
+//     }
+//     return result;
+//   }
+// }
+//quiz1-way3
+void main() {
+  List<String> inputLine = stdin.readLineSync().split(' ');
+  int a = int.parse(inputLine[0]);
+  int b = int.parse(inputLine[1]);
+  int R = int.parse(inputLine[2]);
+  Gongsajang gongsajang = Gongsajang(a, b, R);
+  Park park = Park();
+  int N = int.parse(stdin.readLineSync());
+  for (int i = 0; i < N; i++) {
+    List<String> inputLine = stdin.readLineSync().split(' ');
+    int x = int.parse(inputLine[0]);
+    int y = int.parse(inputLine[1]);
+    // 나무를 생성
+    // 시끄러운지 판단해서 출력
+    Tree tree = Tree(x, y);
+    park.trees.add(tree);
+  }
+  // print
+  for (Tree tree in park.trees) {
+    if (gongsajang.isNoisy(tree)) {
+      print('noisy');
+    } else {
+      print('silent');
+    }
+  }
+}
+class Tree {
+  int x;
+  int y;
+  Tree(this.x, this.y);
+}
+class Gongsajang {
+  int a;
+  int b;
+  int R;
+  Gongsajang(this.a, this.b, this.R);
+  bool isNoisy(Tree tree) {
+    if ((tree.x - a) * (tree.x - a) + (tree.y - b) * (tree.y - b) >= R * R) {
+      return false;
+    }
+    return true;
+  }
+}
+class Park {
+  List<Tree> trees = [];
+}
+// 20 10 10
+// 3
+// 25 10
+// 20 15
+// 70 70
+
+
+
+// void main() {
+//   List<String> inputLine = stdin.readLineSync().split(' ');
+//   int a = int.parse(inputLine[0]);
+//   int b = int.parse(inputLine[1]);
+//   int R = int.parse(inputLine[2]);
+//   Gongsajang gongsajang = Gongsajang(a, b, R);
+//   Park park = Park();
+//   int N = int.parse(stdin.readLineSync());
+//   for (int i = 0; i < N; i++) {
+//     List<String> inputLine = stdin.readLineSync().split(' ');
+//     int x = int.parse(inputLine[0]);
+//     int y = int.parse(inputLine[1]);
+//     // 나무를 생성
+//     // 시끄러운지 판단해서 출력
+//     Tree tree = Tree(x, y);
+//     park.trees.add(tree);
+//   }
+//   // print
+
+//   for (Tree tree in park.trees) {
+//     if (gongsajang.isNoisy(tree)) {
+//       print('noisy');
+//     } else {
+//       print('silent');
+//     }
+//   }
+// }
+// class Tree {
+//   int x;
+//   int y;
+//   Tree(this.x, this.y);
+// }
+// class Gongsajang {
+//   int a;
+//   int b;
+//   int R;
+//   Gongsajang(this.a, this.b, this.R);
+//   bool isNoisy(Tree tree) {
+//     if ((tree.x - a) * (tree.x - a) + (tree.y - b) * (tree.y - b) >= R * R) {
+//       return false;
+//     }
+//     return true;
+//   }
+// }
+// class Park {
+//   List<Tree> trees = [];
+// }
+// 20 10 10
+// 3
+// 25 10
+// 20 15
+// 70 70
+
