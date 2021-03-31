@@ -63,3 +63,9 @@ class Exam {
     return answer;
   }
 }
+
+// class Exam {
+//   int solution(String alphabet) {
+//     return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.indexOf(alphabet) + 1;
+//   }
+// }

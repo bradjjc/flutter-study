@@ -61,7 +61,7 @@ class Exam {
     // tree(int N);
     String solution(int x, int y) {
       if ((2 * (x - a)) + (b * (y - b)) >= R * 2) {
-        return 'noist';
+        return 'noisy';
       } else {
         return 'silent';
       }
