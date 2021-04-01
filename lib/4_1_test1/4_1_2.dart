@@ -25,6 +25,5 @@ void main() {
     if (s[i] == 'A') {
       result += 1;
     }
-
   print(result);
 }
