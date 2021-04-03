@@ -6,6 +6,7 @@
 //
 // // 1
 // // 6
+
 void main() {
   Exam exam = Exam();
   print(exam.solution(3));
