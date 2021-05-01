@@ -54,7 +54,6 @@ void main() {
 //   print(min);
 // }
 
-
 // import 'dart:io';
 // import 'dart:math' as math;
 // void main() {
@@ -90,7 +89,3 @@ void main() {
 //     return result;
 //   }
 // }
-
-
-
-

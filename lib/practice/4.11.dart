@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main() {
   String input = stdin.readLineSync();
   var winners = {}; // 빈 Map

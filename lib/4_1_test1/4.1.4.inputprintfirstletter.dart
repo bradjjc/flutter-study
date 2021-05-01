@@ -10,12 +10,10 @@
 // Midorikawa Tsubame
 // M.T
 
-
 import 'dart:io';
 
-void main (){
+void main() {
   List<String> inputLine = stdin.readLineSync().split(' ');
 
   print('${inputLine[0][0]}.${inputLine[1][0]}');
-
 }

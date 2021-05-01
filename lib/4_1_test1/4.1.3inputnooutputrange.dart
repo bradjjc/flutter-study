@@ -25,14 +25,13 @@ class Exam {
   String solution(int s) {
     String result = '';
 
-      if (s >= 0 && s <= 30) {
-        result = 'sunny';
-      } else if (s >= 31 && s <= 70) {
-        result = 'cloudy';
-      } else if (s >= 71) {
-        result = 'rainy';
-      }
+    if (s >= 0 && s <= 30) {
+      result = 'sunny';
+    } else if (s >= 31 && s <= 70) {
+      result = 'cloudy';
+    } else if (s >= 71) {
+      result = 'rainy';
+    }
     return result;
   }
 }
-
