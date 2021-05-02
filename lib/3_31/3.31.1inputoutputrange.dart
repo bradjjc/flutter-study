@@ -50,9 +50,7 @@ void main() {
   // 공원 생성
   Park park = Park(
       // 공사장을 공원에 셋팅
-      Gongsajang(a, b, R)
-
-  );
+      Gongsajang(a, b, R));
 
   for (int i = 0; i < N; i++) {
     List<String> inputLine = stdin.readLineSync().split(' ');
@@ -70,7 +68,6 @@ void main() {
     } else
       print('silent');
   }
-
 }
 
 class Tree {
@@ -85,11 +82,11 @@ class Gongsajang {
   int b;
   int R;
 
-
   Gongsajang(this.a, this.b, this.R);
 
   bool isNoisy(Tree tree) {
-    if (((tree.x - a) * (tree.x - a)) + ((tree.y - b) * (tree.y - b)) >= pow(R, 2)) {
+    if (((tree.x - a) * (tree.x - a)) + ((tree.y - b) * (tree.y - b)) >=
+        pow(R, 2)) {
       return false;
     } else
       return true;
@@ -102,9 +99,6 @@ class Park {
 
   Park(this.gongsajang);
 }
-
-
-
 
 // void main() {
 //   List<String> inputLine = stdin.readLineSync().split(' ');
@@ -158,4 +152,3 @@ class Park {
 // 25 10
 // 20 15
 // 70 70
-

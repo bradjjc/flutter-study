@@ -1,6 +1,6 @@
 import 'dart:io';
 
-void main(){
+void main() {
   // List<int> no = [1, 2, 3, 4, 5];
   //
   // for ( int i = 0; i < 4; i++){
@@ -8,7 +8,8 @@ void main(){
   // }
   // print(no[0]);
   List<String> no = ['1', '2', '3', '4', '5'];
-  for ( int i = 0; i < 4; i++){
+  for (int i = 0; i < 4; i++) {
     no.remove(stdin.readLineSync());
-  }print(no[0]);
+  }
+  print(no[0]);
 }

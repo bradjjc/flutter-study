@@ -21,16 +21,13 @@
 // 예제 출력 1
 // 4 19
 
-
 import 'dart:io';
 
-void main(){
-
-  for (int i = 0; i < 5; i++){
-    List<int> score = stdin.readLineSync().split(' ').map((e) => int.parse(e).toInt());
+void main() {
+  for (int i = 0; i < 5; i++) {
+    List<int> score =
+        stdin.readLineSync().split(' ').map((e) => int.parse(e).toInt());
     score.addAll([i]);
-  print(score);
+    print(score);
   }
-
-
 }

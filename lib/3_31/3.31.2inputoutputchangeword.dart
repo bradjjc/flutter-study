@@ -1,9 +1,7 @@
-
 import 'dart:io';
 
-void main () {
+void main() {
   String input = stdin.readLineSync();
-
 
   String result = '';
   for (int i = 0; i < input.length; i++) {
@@ -23,7 +21,7 @@ void main () {
       result += '5';
     } else if (ch == 'Z') {
       result += '2';
-    }else
+    } else
       result = result + ch;
   }
 }
@@ -95,7 +93,6 @@ void main () {
 //       String converted = rule[ch]; // 변경된 한글자
 
 //      result += result[ch] ?? ch;     null 이면 ch
-
 
 //       if (converted == null) {
 //         // 변경했더니 null이면
